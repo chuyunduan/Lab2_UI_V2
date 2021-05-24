@@ -11,6 +11,9 @@
     <Window.Resources>
         <CollectionViewSource  Source="{Binding}"
                                x:Key="key_view_DataCollection" Filter="DataCollection"/>
+        <!--привязки данных 绑定-->
+        <!--multibinding 多绑定 -->
+        <!--преобразователь типа数据转换器-->
         <CollectionViewSource  Source="{Binding}"
                                x:Key="key_view_DataOnGrid" Filter="DataOnGrid"/>
 

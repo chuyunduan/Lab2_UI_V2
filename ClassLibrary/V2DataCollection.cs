@@ -13,6 +13,7 @@ namespace ClassLibrary
     class V2DataCollection : V2Data, IEnumerable<DataItem>, INotifyCollectionChanged
     {
         public List<DataItem> dataItems { get; set; }
+        //бросает событие 触发事件
         public event NotifyCollectionChangedEventHandler CollectionChanged;
         public V2DataCollection(string info, double freq) : base(info, freq)
         {

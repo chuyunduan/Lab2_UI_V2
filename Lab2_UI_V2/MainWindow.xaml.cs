@@ -161,12 +161,16 @@ namespace Lab2_UI_V2
         {
             if (mainCollection.CollectionChangedAfterSave)
                 UnsavedChanges();
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.FileName = "Inf";
             dlg.DefaultExt = ".txt";
             dlg.Filter = "TXTFiles|*.txt";
             if ((bool)dlg.ShowDialog())
-                mainCollection.Save(dlg.FileName);
+            {
+                mainCollection = new V2MainCollection();
+                mainCollection.Load(dlg.FileName);
+                DataContext = mainCollection;
+            }
             MessageError();
         }
 

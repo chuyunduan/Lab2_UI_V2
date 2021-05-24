@@ -19,6 +19,8 @@ namespace Lab2_UI_V2
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(proChange));
         }
+        //проверку корректности данных
+        //数据验证
         public float X
         {
             get { return xCoord; }
@@ -119,7 +121,8 @@ namespace Lab2_UI_V2
         public void Add()
         {
             collection.Add(new DataItem(new System.Numerics.Vector2(X, Y),
-                           new System.Numerics.Complex(Real, Real)));
+                           new System.Numerics.Complex(Real, Imagine)));
+            //обновляться 更新信息
             OnPropertyChanged("X");
             OnPropertyChanged("Real");
             OnPropertyChanged("Y");
